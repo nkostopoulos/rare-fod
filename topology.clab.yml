@@ -1,0 +1,28 @@
+name: fod-lab
+
+mgmt:
+  network: fod
+  ipv4-subnet: 172.100.100.0/24
+  ipv6-subnet: 2001:172:100:100::/80
+
+topology:
+    nodes:
+      host1:
+        kind: linux
+        image: ubuntu:latest
+      host2:
+        kind: linux
+        image: ubuntu:latest
+      rtr:
+        kind: rare
+        image: ghcr.io/rare-freertr/freertr-containerlab:latest
+        mgmt-ipv4: 172.100.100.10
+        mgmt-ipv6: 2001:172:100:100::10
+
+    links:
+      - endpoints:
+        - host1:eth1
+        - rtr:eth1
+      - endpoints:
+        - host2:eth1
+        - rtr:eth2

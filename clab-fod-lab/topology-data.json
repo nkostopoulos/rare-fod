@@ -1,0 +1,138 @@
+{
+  "name": "fod-lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "fod",
+        "bridge": "br-4f5139758a43",
+        "ipv4-subnet": "172.100.100.0/24",
+        "ipv4-gw": "172.100.100.1",
+        "ipv6-subnet": "2001:172:100:100::/80",
+        "ipv6-gw": "2001:172:100:100::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "host1": {
+      "index": "0",
+      "shortname": "host1",
+      "longname": "clab-fod-lab-host1",
+      "fqdn": "host1.fod-lab.io",
+      "group": "",
+      "labdir": "/root/fod-lab/clab-fod-lab/host1",
+      "kind": "linux",
+      "image": "ubuntu:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:100:100::3",
+      "mgmt-ipv6-prefix-length": 80,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-4f5139758a43",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/host1",
+        "clab-node-name": "host1",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/fod-lab/topology.clab.yml",
+        "containerlab": "fod-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host2": {
+      "index": "1",
+      "shortname": "host2",
+      "longname": "clab-fod-lab-host2",
+      "fqdn": "host2.fod-lab.io",
+      "group": "",
+      "labdir": "/root/fod-lab/clab-fod-lab/host2",
+      "kind": "linux",
+      "image": "ubuntu:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:100:100::2",
+      "mgmt-ipv6-prefix-length": 80,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-4f5139758a43",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/host2",
+        "clab-node-name": "host2",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/fod-lab/topology.clab.yml",
+        "containerlab": "fod-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "rtr": {
+      "index": "2",
+      "shortname": "rtr",
+      "longname": "clab-fod-lab-rtr",
+      "fqdn": "rtr.fod-lab.io",
+      "group": "",
+      "labdir": "/root/fod-lab/clab-fod-lab/rtr",
+      "kind": "rare",
+      "image": "ghcr.io/rare-freertr/freertr-containerlab:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.10",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:100:100::10",
+      "mgmt-ipv6-prefix-length": 80,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-4f5139758a43",
+        "clab-node-group": "",
+        "clab-node-kind": "rare",
+        "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/rtr",
+        "clab-node-name": "rtr",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/fod-lab/topology.clab.yml",
+        "containerlab": "fod-lab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "host1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:2d:17:dd",
+        "peer": "z"
+      },
+      "z": {
+        "node": "rtr",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:af:ec:20",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "host2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:67:f0:83",
+        "peer": "z"
+      },
+      "z": {
+        "node": "rtr",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:23:90:2b",
+        "peer": "a"
+      }
+    }
+  ]
+}

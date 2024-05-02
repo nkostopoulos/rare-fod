@@ -1,0 +1,113 @@
+hostname rtr
+buggy
+!
+logging buffered debug 10240
+logging file debug /rtr/run/logs/freertr.log
+logging rotate 655360000 /rtr/run/logs/freertr.old
+!
+crypto rsakey rsa import $v10$TUlJRXBBSUJBQUtDQVFFQWw4cUVNNHNwcldlemdkaFdJaHREQlpHbVlPbTdzbEhEaGE4Z1lBK1d3aC9GWGxEczJsOEc5YkFIbklQYnU0TmFYWjcydU82MTZOb0RzR3g3dGZwQjdoUGVSUUFISS9qdmVkU3MyOFozczZSNzBxS2N0VUkzRU9GMEw0SDdrUU1TWEpxS01FdXBEcmJmYWhPYVFtY3EvVWxZdnhiTnFhVHd6WFhJSC9wZm4vQmJ1TmVOeVk0cVVKVVBIcHRCN3RCV2R3enlqOUZKYm52OFBEUVVVSEFDQURTdlp0dnJycjdMa0FsWi83bU0wZDJ4YncrQlZGQlZXRkpYT2pmR0p5QVlIVk9QTGtRcmZLU0RxWGZMQ2NTSFhFVUNmUEN5TkJlQ05WRzAvdEhydHRvcjIyQTc2Sk5PRUtDL0ZkVUxpejFobFBXOHVjY2J3M2dkY2pwNVl2OEF2UUlEQVFBQkFvSUJBRXhzSmd0ZGNXcGczN3ZzRTlHd01CcEpycDcwancvRW90Qlh6OUVOaURYTWtTNWZTQ0RaMzBNcmtXbDM2ZFdLMktCeVBIMzNrWmJlelNTeU9jYnhiT2hWRUg5aytETmdUaEhreGZNUkJZdG9zUDduNkVaS1JEYzNpNnV2b2R6czB2M1V3T1ozOFhIN0dKanJyYXJwRG5mZnlkTEx4Rmc1TnhQNnpQdHNyMkJ5ZU5JMUR0Vmt6dDNSSGNRTDBXM0JpZEtTQ1VrVUdjMk9zamk3a2w5NkJUYzRveVFPQyt2dGRZVUliSGhvbEczekpTaWVpRk9zUXdVV1BhQU4vWWRmc3VrRERTT2pEdkZaVFV5YllHTGliOGo5cEVRUzA0MHlqWFRLUHQ4NkNYbkVjWkc5a1VDZkV0YUpCZ2NaanlYNmo5aWJva3ozOGppRGJZMGFOQk84eTNFQ2dZRUF6VkdVZy9jYm9VN2ZYWGxwVk1xT3hGVE0wVkVJb3dZbkJSNW9LUXd5b25yTlZBb1IyME1BMEJhcmNKaEd0SFBiOExqTG9MZU0xcldHV0tBaEp2ZzdWYXNtWVdSSzhFQ01ZYkJGMXRWR2s4NStUSS9UdUo0OC90Zlk0c204WEl1aHBpUjNpdmRiVDdIN1RhTHY3cG40L1gzT055ZFo1L0FzeC9PMktlVkZPaThDZ1lFQXZVSnczaHRwU1BhSm9QaVNQcC8zUjA5UUpRSGFhUUpoa1J5aVp3RzdEa09vd2lSVVFrN3VpaFphWktvNXpFNXVXUTlkeUpNcmFDZ2o5SDkrd29VNGlLZXg3UWZ5Y2lsdzNwMWNMdjgvSmhUcklvZzZmY0pmQWcwZ2lDWU9nbEordWYxc3o1NHpOL1RhS21rdlBHb2hya1N2ZFoya3VvcHAyditteDd1cHROTUNnWUVBcVRtVUx6QjhsWGRzb3A1dk1uUEJPQkNzdjlrS1JWUE0xV3M2YnBxZklVd1Y4QzVjaVZ1d1Q5SmZlMjRHMkxTbGtzSzlFcm8yV3NGQytja0JpaDBPeW8xR0ZQK1V4SEJ2UkJVRmV3eE9INFVTbEFmM2VUTHpFeGpVcWhlY0tLcnRrUUo5aFF4Yk5sUjd6SUYvUUNtb0QwYWhzTk8rUm15dWZCOWpCU1R5NmdFQ2dZRUF0UlpFanBCbHpoVnZIS0dhdE9jMG9IdW9NTEMwUGJPMGpUZDd3Tm1zRkhyeWwwaFJndHlwYTJEMS9zbk40Y25OMWROWkpkaURPUGJuYUVNeGs0Z0t6dDY5NVJHc2prVk9wUUttT0tXcjA1RkNadGs0TmlwcjQ3ZVJ3QlBCNERwMDNSczZLUEd6Q2tCekd3OW56Z095MUY4T0Q1aldERkx4OUVTWFhSY1h5MWNDZ1lBS3lzc3h6WXJieXk0WUVRNExMMEptNm9qajM2MUYvd2RiQTQ3UGRCLytpQXNoYTZLSStKSmJYS0lsaXI5aGlRYlY4cVBKU1FaV3E4bUZLdEU2UFdiaDBUcjJIMWpTS0lQL0gwTVU5bmZkak4vanNuVFVpM3NOdGxIdmpmQzBKNmNjc0xQcWRZdkJFTytndmdBTEJvYWU1V05xMHhrME95UE1XZU53VDRsSmhRPT0=
+!
+crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ1FDUWpreG54Rm5MWFRLVjliVCtTWlE0Q2RBN0o5QVduTE0wYXFPdU0rczVodGRWYXgyMzgwYzNYUWxIVW5RbDQ5MUVLM0VhSmN3SVppQkVOZ0NsUkU5dElHUFMwVWk2RHc1WXg4TkZVRWlMVm4xSmZ6aTdlcGhNV2VmM2xCYTlOL3lMZE9zbUZuR2JwQlpISDJRbjJyQmJzVHZKemw0cHFEZHhlaTBhQTRVQXNRSVZBT09iUW15SllEQ3M5YlUvMlVBQk1nNXZxYnpGQW9HQUVTY3RZTzRKR1Y1SHR5TGg0T244NWZaN1V2bW1EbjNLbTZrcGF3N1Nnejd2TkQvME1VcTdJL09JeFlaWGhXM2p0bXdleEMwRlFPK1JLdG93cGRSUlNtVW5PajNRaDNpcjNURVpMaStTYXlHVWFJN2VhSWkvayt4WkZ0L3FmajdFUUFISU5uenJFVFlNMUVncEJWdHJLYVA1Rm9OeEh6V3puazJOcjBHbXc5Z0NnWUJkRm1RY2RwLzFJYlJiMjgrdFFJWUpCZHN4b1pwWXlHNlpzQU9KUnlHM3I5dU9GY1ExNHZRSVpuUXVuK1R2YnYzdzd5YlVMV3RPbU9yOFEzb3c4YlYwQTh1anZZTVhCcDBJSXBjVmwrYkcrdVNIOFFtZFFyQ0JHWmNGUFdVZ1pscW5tc1ZXdnJWeCtxZlI3cGtSQllQdzhzVExmbXM2ZW9Bc1hHT1FFWjFKelFJVUVLUTJub0lrOWJtSFlwMnd1QmpvRUljU29xQT0=
+!
+crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIemtWNTFNWkMrTXVlWEZaclZ0MVFDRXl1Tm96QnRxV0trSmVteUEzQjlxZ0J3WUZLNEVFQUFxaFJBTkNBQVRMU3d3Um1URFlSelozRGFQMjVPd0x4d3Qvbi9QOXNLRUxOd0ZvQW1SZjI3VHlKQWVFekFWWmk2U1J5Umw1TktOOTZUTmlieVdOd1pIblFxSitCZnFB
+!
+aaa userlist usr
+ username rare
+ username rare password $v10$cmFyZQ==
+ exit
+!
+scheduler errors
+ time 600000
+ delay 30000
+ command clear errors freerror@nop.hu
+ start
+ exit
+!
+prefix-list ALL4
+ sequence 10 permit 0.0.0.0/0 ge 0 le 0
+ exit
+!
+prefix-list ALL6
+ sequence 10 permit ::/0 ge 0 le 0
+ exit
+!
+vrf definition OOB
+ exit
+!
+interface ethernet1
+ description "Interface to host1"
+ vrf forwarding OOB
+ ipv4 address 10.0.1.1 255.255.255.0
+ ipv4 netflow-tx
+ ipv4 flowspec-disable
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet2
+ description "Interface to host2"
+ vrf forwarding OOB
+ ipv4 address 10.0.2.1 255.255.255.0
+ ipv4 netflow-rx
+ ipv4 flowspec-disable
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet255
+ vrf forwarding OOB
+ ipv4 address 172.100.100.10 255.255.255.0
+ ipv6 address 2001:172:100:100::10 ffff:ffff:ffff:ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+console0
+ no exec authorization
+ no login authentication
+ exit
+!
+proxy-profile OOB
+ vrf OOB
+ exit
+!
+proxy-profile inet
+ vrf OOB
+ source ethernet1
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ipv4 flow OOB export inet 10.0.2.2 9995
+ipv4 flow OOB parameters timeout 10000
+!
+!
+server telnet OOB
+ security authentication usr
+ security rsakey rsa
+ security dsakey dsa
+ security ecdsakey ecdsa
+ second-port 22
+ exec logging
+ no exec authorization
+ login authentication usr
+ login logging
+ vrf OOB
+ exit
+!
+client proxy OOB
+client capture-path /rtr/run/pcap/
+client name-server 1.1.1.1
+client time-server europe.pool.ntp.org
+client time-zone CET
+!
+end
