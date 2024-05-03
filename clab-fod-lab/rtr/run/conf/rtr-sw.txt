@@ -48,8 +48,6 @@ interface ethernet2
  description "Interface to host2"
  vrf forwarding OOB
  ipv4 address 10.0.2.1 255.255.255.0
- ipv4 netflow-rx
- ipv4 flowspec-disable
  no shutdown
  no log-link-change
  exit
@@ -58,6 +56,16 @@ interface ethernet255
  vrf forwarding OOB
  ipv4 address 172.100.100.10 255.255.255.0
  ipv6 address 2001:172:100:100::10 ffff:ffff:ffff:ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet3
+ description "Interface to FoD"
+ vrf forwarding OOB
+ ipv4 address 10.0.3.1 255.255.255.0
+ ipv4 netflow-rx
+ ipv4 flowspec-disable
  no shutdown
  no log-link-change
  exit
@@ -87,8 +95,8 @@ proxy-profile inet
 !
 !
 !
-ipv4 flow OOB export inet 10.0.2.2 9995
-ipv4 flow OOB parameters timeout 10000
+ipv4 flow OOB export inet 10.0.3.2 9995
+ipv4 flow OOB parameters timeout 1000
 !
 !
 server telnet OOB

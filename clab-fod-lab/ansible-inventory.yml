@@ -7,10 +7,12 @@ all:
   children:
     linux:
       hosts:
+        clab-fod-lab-fod:
+          ansible_host: 172.100.100.4
         clab-fod-lab-host1:
-          ansible_host: 172.100.100.3
-        clab-fod-lab-host2:
           ansible_host: 172.100.100.2
+        clab-fod-lab-host2:
+          ansible_host: 172.100.100.3
     rare:
       hosts:
         clab-fod-lab-rtr:

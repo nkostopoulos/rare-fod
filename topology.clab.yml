@@ -18,6 +18,11 @@ topology:
         image: ghcr.io/rare-freertr/freertr-containerlab:latest
         mgmt-ipv4: 172.100.100.10
         mgmt-ipv6: 2001:172:100:100::10
+      fod:
+        kind: linux
+        image: ghcr.io/dschmitz2017/fod:python3
+        publish:
+          - tcp/8000
 
     links:
       - endpoints:
@@ -26,3 +31,6 @@ topology:
       - endpoints:
         - host2:eth1
         - rtr:eth2
+      - endpoints:
+        - fod:eth1
+        - rtr:eth3
