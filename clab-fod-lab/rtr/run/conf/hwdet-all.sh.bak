@@ -15,9 +15,9 @@ ulimit -c unlimited
 ### macs ###
 echo starting macs.
 # eth0 02:42:ac:64:64:0a #
-# eth1 aa:c1:ab:6c:ab:fb #
-# eth2 aa:c1:ab:bc:ba:0e #
-# eth3 aa:c1:ab:3b:6e:bb #
+# eth1 aa:c1:ab:47:ea:b3 #
+# eth2 aa:c1:ab:64:a0:ce #
+# eth3 aa:c1:ab:08:b1:75 #
 
 ### interfaces ###
 echo starting interfaces.

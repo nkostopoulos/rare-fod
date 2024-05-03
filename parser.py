@@ -1,5 +1,8 @@
 import subprocess
+import os
 from time import sleep
+
+BYTES_THRESHOLD = 100000
 
 def return_command_output(command):
     proc = subprocess.Popen(command, stdout = subprocess.PIPE, shell = True)
@@ -25,21 +28,22 @@ if __name__ == "__main__":
                     max_timestamp = timestamp
         afile = "nfcapd." + str(max_timestamp)
     
-        command = "nfdump -r /var/cache/nfdump/" + str(afile) + " -s srcip -a -N"
+        command = "nfdump -r /var/cache/nfdump/" + str(afile) + " -a -N -O packets"
         nfdump_output = return_command_output(command).decode('utf8')
         nfdump_split = nfdump_output.split("\n")
-    
-        output_temp = nfdump_split[2]
-        output_temp = " ".join(output_temp.split())
-        output_temp = output_temp.split(" ")
-        
-        src_ip = output_temp[4]
-        flows = output_temp[5].split("(")[0]
-        packets = output_temp[6].split("(")[0] 
-        number_bytes = output_temp[7].split("(")[0]
-    
-        print("src_ip: ", src_ip)
-        print("flows: ", flows)
-        print("packets: ", packets)
-        print("number_bytes: ", number_bytes)
+
+        ip_info = nfdump_split[1]
+        ip_info = " ".join(ip_info.split())
+        ip_info = ip_info.split(" ")
+
+        protocol = ip_info[4]
+        src_ip = ip_info[5].split(":")[0]
+        dst_ip = ip_info[7].split(":")[0]
+        number_bytes = ip_info[11]
+
+        if int(number_bytes) > BYTES_THRESHOLD:
+            os.chdir("/srv/flowspy")
+            print(os.system("pwd"))
+            command = "./inst/helpers/enable_rule.sh " + str(src_ip) + "/32 " + str(dst_ip) + "/32 " + str(protocol) + " 1"
+            os.system(command)
 

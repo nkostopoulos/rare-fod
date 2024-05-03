@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "fod",
-        "bridge": "br-8614a8e8fcb6",
+        "bridge": "br-f3ee40ec2511",
         "ipv4-subnet": "172.100.100.0/24",
         "ipv4-gw": "172.100.100.1",
         "ipv6-subnet": "2001:172:100:100::/80",
@@ -28,13 +28,13 @@
       "image": "ghcr.io/dschmitz2017/fod:python3",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.4",
+      "mgmt-ipv4-address": "172.100.100.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "2001:172:100:100::4",
+      "mgmt-ipv6-address": "2001:172:100:100::2",
       "mgmt-ipv6-prefix-length": 80,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-8614a8e8fcb6",
+        "clab-mgmt-net-bridge": "br-f3ee40ec2511",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/fod",
@@ -63,13 +63,13 @@
       "image": "ubuntu:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.2",
+      "mgmt-ipv4-address": "172.100.100.4",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "2001:172:100:100::2",
+      "mgmt-ipv6-address": "2001:172:100:100::4",
       "mgmt-ipv6-prefix-length": 80,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-8614a8e8fcb6",
+        "clab-mgmt-net-bridge": "br-f3ee40ec2511",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/host1",
@@ -98,7 +98,7 @@
       "mgmt-ipv6-prefix-length": 80,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-8614a8e8fcb6",
+        "clab-mgmt-net-bridge": "br-f3ee40ec2511",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/host2",
@@ -127,7 +127,7 @@
       "mgmt-ipv6-prefix-length": 80,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-8614a8e8fcb6",
+        "clab-mgmt-net-bridge": "br-f3ee40ec2511",
         "clab-node-group": "",
         "clab-node-kind": "rare",
         "clab-node-lab-dir": "/root/fod-lab/clab-fod-lab/rtr",
@@ -145,13 +145,13 @@
       "a": {
         "node": "host1",
         "interface": "eth1",
-        "mac": "aa:c1:ab:58:93:a1",
+        "mac": "aa:c1:ab:06:83:49",
         "peer": "z"
       },
       "z": {
         "node": "rtr",
         "interface": "eth1",
-        "mac": "aa:c1:ab:73:cc:6a",
+        "mac": "aa:c1:ab:bf:0b:de",
         "peer": "a"
       }
     },
@@ -159,13 +159,13 @@
       "a": {
         "node": "host2",
         "interface": "eth1",
-        "mac": "aa:c1:ab:1f:c8:b4",
+        "mac": "aa:c1:ab:58:5c:20",
         "peer": "z"
       },
       "z": {
         "node": "rtr",
         "interface": "eth2",
-        "mac": "aa:c1:ab:57:c6:ef",
+        "mac": "aa:c1:ab:30:b0:23",
         "peer": "a"
       }
     },
@@ -173,13 +173,13 @@
       "a": {
         "node": "fod",
         "interface": "eth1",
-        "mac": "aa:c1:ab:fb:e6:ec",
+        "mac": "aa:c1:ab:27:f8:74",
         "peer": "z"
       },
       "z": {
         "node": "rtr",
         "interface": "eth3",
-        "mac": "aa:c1:ab:48:cb:00",
+        "mac": "aa:c1:ab:38:10:78",
         "peer": "a"
       }
     }

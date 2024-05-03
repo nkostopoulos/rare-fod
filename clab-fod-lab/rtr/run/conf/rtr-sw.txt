@@ -23,12 +23,21 @@ scheduler errors
  start
  exit
 !
+access-list flowspec-rules
+ exit
+!
 prefix-list ALL4
  sequence 10 permit 0.0.0.0/0 ge 0 le 0
  exit
 !
 prefix-list ALL6
  sequence 10 permit ::/0 ge 0 le 0
+ exit
+!
+policy-map flowspec-pmap
+ sequence 1 action drop
+ sequence 1 match access-group flowspec-rules
+ !
  exit
 !
 vrf definition OOB
@@ -62,12 +71,33 @@ interface ethernet255
 !
 interface ethernet3
  description "Interface to FoD"
+ lldp enable
  vrf forwarding OOB
  ipv4 address 10.0.3.1 255.255.255.0
  ipv4 netflow-rx
  ipv4 flowspec-disable
  no shutdown
  no log-link-change
+ exit
+!
+router bgp4 1
+ vrf OOB
+ local-as 2001
+ router-id 10.0.3.1
+ no safe-ebgp
+ address-family unicast flowspec
+ flowspec-install
+ flowspec-advert flowspec-pmap
+ !
+ neighbor 10.0.3.2 remote-as 1001
+ neighbor 10.0.3.2 local-as 2001
+ neighbor 10.0.3.2 address-family unicast flowspec
+ neighbor 10.0.3.2 distance 20
+ neighbor 10.0.3.2 send-community standard extended
+ !
+ !
+ redistribute connected
+ redistribute uni2flow4 1
  exit
 !
 console0

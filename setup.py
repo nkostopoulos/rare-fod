@@ -89,8 +89,13 @@ if __name__ == "__main__":
     debug(command)
     execute_command(fod, command)
 
+    # Rewrite ExaBGP configuration in the FoD container with the necessary parameters
+    command = "./exabgp/run-exabgp-generic --init-conf 10.0.3.2 10.0.3.2 1001 10.0.3.1 10.0.3.1 2001 -- --supervisord --restart"
+    debug(command)
+    execute_command(fod, command)
+
     # DDoS host2 from host1 using "hping3"
-    command = "timeout 10m hping3 -S 10.0.2.2 --flood"
+    command = "timeout 10m hping3 --icmp 10.0.2.2 --flood"
     debug(command)
     execute_command_detached(host1, command)
 
