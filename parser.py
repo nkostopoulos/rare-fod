@@ -2,7 +2,7 @@ import subprocess
 import os
 from time import sleep
 
-BYTES_THRESHOLD = 100000
+BYTES_THRESHOLD = 20000
 
 def return_command_output(command):
     proc = subprocess.Popen(command, stdout = subprocess.PIPE, shell = True)
@@ -43,7 +43,6 @@ if __name__ == "__main__":
 
         if int(number_bytes) > BYTES_THRESHOLD:
             os.chdir("/srv/flowspy")
-            print(os.system("pwd"))
             command = "./inst/helpers/enable_rule.sh " + str(src_ip) + "/32 " + str(dst_ip) + "/32 " + str(protocol) + " 1"
             os.system(command)
 
